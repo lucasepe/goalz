@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoalZ - Projection tool based on expected-goals + Dixon-Coles modeling</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      
+      <section class="hero">
+        <p id="kicker" class="kicker">GoalZ</p>
+        <div class="hero-head">
+          <h1 id="headline">Predisponi il tuo match in 3 click</h1>
+          <label for="langSelect" class="lang-label">Language</label>
+          <select id="langSelect" class="lang-select">
+            <option value="it">IT</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <p id="subtitle" class="subtitle">Carica solo <strong>teams.csv</strong>, scegli <strong>Home Team</strong> e <strong>Away Team</strong>, lancia la stima e leggi la previsione.</p>
+      </section>
+
+      <div class="content-grid">
+        <div class="main-column">
+          <section class="card">
+            <h2 id="inputHeading">Input</h2>
+            <label id="teamsLabel" for="teamsFile" class="sr-only">Teams CSV</label>
+            <div class="upload">
+              <input id="teamsFile" class="hidden-file-input" type="file" accept=".csv" />
+              <button id="fileTrigger" type="button" class="secondary-btn">Carica il file</button>
+              <span id="fileName" class="status">Nessun file selezionato</span>
+              <button id="sampleFile" type="button">oppure ... usa i dati di esempio della Serie A (non aggiornati)</button>
+              <span id="uploadStatus" class="status">Nessun file caricato</span>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label id="homeTeamLabel" for="homeTeam">Home team</label>
+                <select id="homeTeam" disabled>
+                  <option>Carica prima il file CSV</option>
+                </select>
+              </div>
+              <div class="field">
+                <label id="awayTeamLabel" for="awayTeam">Away team</label>
+                <select id="awayTeam" disabled>
+                  <option>Carica prima il file CSV</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="field">
+                <label for="homeAvailability" class="compact-with-tooltip">
+                  <span id="homeAvailabilityLabel">Disponibilita casa</span>
+                  <span class="tooltip-wrap" id="homeAvailabilityTooltipWrap">
+                    <button
+                      id="homeAvailabilityTooltip"
+                      type="button"
+                      class="tooltip-trigger"
+                      aria-label="Informazioni su disponibilita casa"
+                      aria-describedby="homeAvailabilityTooltipText"
+                    >
+                      ⓘ
+                    </button>
+                    <span id="homeAvailabilityTooltipText" class="tooltip-bubble" role="tooltip"></span>
+                  </span>
+                </label>
+                <input id="homeAvailability" type="range" min="0.70" max="1.00" step="0.01" value="1.00" />
+                <div id="homeAvailabilityValue" class="muted">1.00</div>
+              </div>
+              <div class="field">
+                <label for="awayAvailability" class="compact-with-tooltip">
+                  <span id="awayAvailabilityLabel">Disponibilita trasferta</span>
+                  <span class="tooltip-wrap" id="awayAvailabilityTooltipWrap">
+                    <button
+                      id="awayAvailabilityTooltip"
+                      type="button"
+                      class="tooltip-trigger"
+                      aria-label="Informazioni su disponibilita trasferta"
+                      aria-describedby="awayAvailabilityTooltipText"
+                    >
+                      ⓘ
+                    </button>
+                    <span id="awayAvailabilityTooltipText" class="tooltip-bubble" role="tooltip"></span>
+                  </span>
+                </label>
+                <input id="awayAvailability" type="range" min="0.70" max="1.00" step="0.01" value="1.00" />
+                <div id="awayAvailabilityValue" class="muted">1.00</div>
+              </div>
+            </div>
+
+            <div class="compact compact-with-tooltip">
+              <label id="rhoLabel" for="rho">Correzione modello (risultati bassi)</label>
+              <span class="tooltip-wrap" id="rhoTooltipWrap">
+                <button
+                  id="rhoTooltip"
+                  type="button"
+                  class="tooltip-trigger"
+                  aria-label="Informazioni su rho"
+                  aria-describedby="rhoTooltipText"
+                >
+                  ⓘ
+                </button>
+                <span id="rhoTooltipText" class="tooltip-bubble" role="tooltip"></span>
+              </span>
+            </div>
+            <input id="rho" type="range" min="-0.5" max="0.2" step="0.01" value="-0.08" />
+            <div id="rhoValue" class="muted">-0.08</div>
+
+            <button id="runButton" disabled>Calcola</button>
+
+            <section id="error" class="card hidden"></section>
+          </section>
+
+          <section id="result" class="card">
+            <h2 id="resultHeading">Predizione</h2>
+            <div id="resultContent" class="empty">Attendi caricamento input.</div>
+          </section>
+        </div>
+      </div>
+
+      <footer class="footer-links">
+        <a id="guideFooterLink" class="footer-btn" href="guide_it.html">Guida al formato CSV</a>
+        <a id="limitsFooterLink" class="footer-btn" href="limits_it.html">Limiti e disclaimer</a>
+        <a id="paymentFooterLink" class="footer-btn secondary" href="payment_it.html">Ottieni i files CSV con i dati delle leghe</a>
+      </footer>
+    </main>
+
+    <script src="./wasm_exec.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

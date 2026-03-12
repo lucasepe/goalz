@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoalZ - Fields guide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <div class="top-nav">
+          <a class="text-link top-back-link" href="index.html">< Back to home</a>
+        </div>
+        <h1>CSV input file structure</h1>
+        <p class="muted">This page explains required fields of the <code>CSV</code> input file.</p>
+
+        <section class="card" style="margin-top: 0.8rem;">
+          <h2>Required fields in <code>teams.csv</code></h2>
+          <ul class="list">
+            <li><strong><code>team</code></strong> - team name.</li>
+            <li><strong><code>HomeXGF</code></strong> - expected goals scored at home.</li>
+            <li><strong><code>AwayXGF</code></strong> - expected goals scored away.</li>
+            <li><strong><code>HomeXGA</code></strong> - expected goals conceded at home.</li>
+            <li><strong><code>AwayXGA</code></strong> - expected goals conceded away.</li>
+            <li><strong><code>HomePlayed</code></strong> - home matches played.</li>
+            <li><strong><code>AwayPlayed</code></strong> - away matches played.</li>
+          </ul>
+        </section>
+
+                <section class="card" style="margin-top: 0.8rem;">
+          <h2>Minimal <code>CSV</code> example</h2>
+          <pre style="white-space: pre-wrap; color: var(--accent); background: #09142f; border: 1px solid #30427e; border-radius: 10px; padding: 0.7rem; margin: 0;">
+team,HomeXGF,AwayXGF,HomeXGA,AwayXGA,HomePlayed,AwayPlayed
+Inter,1.72,1.08,0.98,1.31,18,18
+Milan,1.54,0.99,1.11,1.22,18,18
+Napoli,1.49,1.02,1.05,1.18,18,18
+          </pre>
+        </section>
+
+        <div class="footer-links">
+          <a class="footer-btn" href="limits_en.html">Limits and disclaimer</a>
+          <a class="footer-btn secondary" href="payment_en.html">Get updated CSV</a>
+          <a class="footer-btn" href="guide_it.html">Versione italiana</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

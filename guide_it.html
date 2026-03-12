@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoalZ - Guida campi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <div class="top-nav">
+          <a class="text-link top-back-link" href="index.html">< Torna alla home</a>
+        </div>
+        <h1>Guida alla struttura del file CSV</h1>
+        <p class="muted">Questa pagina spiega i campi richiesti dal file <code>CSV</code> in input.</p>
+
+
+        <section class="card" style="margin-top: 0.8rem;">
+          <ul class="list">
+            <li><strong><code>team</code></strong> - nome squadra.</li>
+            <li><strong><code>HomeXGF</code></strong> - gol attesi fatti in casa.</li>
+            <li><strong><code>AwayXGF</code></strong> - gol attesi fatti in trasferta.</li>
+            <li><strong><code>HomeXGA</code></strong> - gol attesi subiti in casa.</li>
+            <li><strong><code>AwayXGA</code></strong> - gol attesi subiti in trasferta.</li>
+            <li><strong><code>HomePlayed</code></strong> - partite giocate in casa.</li>
+            <li><strong><code>AwayPlayed</code></strong> - partite giocate in trasferta.</li>
+          </ul>
+        </section>
+
+                <section class="card" style="margin-top: 0.8rem;">
+          <h3>Esempio di un file <code>CSV</code></h3>
+          <pre style="white-space: pre-wrap; color: var(--accent); background: #09142f; border: 1px solid #30427e; border-radius: 10px; padding: 0.7rem; margin: 0;">
+team,HomeXGF,AwayXGF,HomeXGA,AwayXGA,HomePlayed,AwayPlayed
+Inter,1.72,1.08,0.98,1.31,18,18
+Milan,1.54,0.99,1.11,1.22,18,18
+Napoli,1.49,1.02,1.05,1.18,18,18
+          </pre>
+        </section>
+
+
+        <div class="footer-links">
+          <a class="footer-btn" href="limits_it.html">Limiti e disclaimer</a>
+          <a class="footer-btn secondary" href="payment_it.html">Ottieni CSV aggiornati</a>
+          <a class="footer-btn" href="guide_en.html">English version</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
